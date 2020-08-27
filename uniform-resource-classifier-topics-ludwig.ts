@@ -36,8 +36,7 @@ export class LudwigTopicsClassifier implements ur.UniformResourceTransformer {
   }
 
   async callTopicsAPI(ctx: ur.ResourceTransformerContext, resource: ur.UniformResource, input: object): Promise<LudwigTopicsNotClassifiableResource | LudwigClassifiedResource> {
-    const result = await tru.call("https://ludwig.ml.infra.medigy.com/predict", input);
-    
+    const result = await tru.call("https://ludwig.ml.infra.medigy.com/predict", input, new tru.FormDataCallOptions({ fetchTimeOut: 120000 }));
     if (tru.isCallResult(result)) {
       return {
         ...resource,
