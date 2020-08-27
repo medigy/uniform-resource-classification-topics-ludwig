@@ -1,9 +1,9 @@
 {
-    "name": "@medigy/uniform-resource-classifier-nih-mesh",
+    "name": "@medigy/uniform-resource-classification-topics-ludwig",
     "version": "0.5.0",
-    "description": "Uniform resource NIH MeSH topics classifier",
-    "main": "dist/uniform-resource-classifier-nih-mesh.js",
-    "types": "dist/uniform-resource-classifier-nih-mesh.d.ts",
+    "description": "Uniform resource topics classifier Ludwig",
+    "main": "dist/uniform-resource-classifier-topics-ludwig.js",
+    "types": "dist/uniform-resource-classifier-topics-ludwig.d.ts",
     "files": [
         "dist"
     ],
@@ -13,7 +13,7 @@
         "test": "alsatian './**/*.spec.ts'"
     },
     "repository": {
-        "url": "git://github.com/medigy/uniform-resource-classifier-nih-mesh.git"
+        "url": "git://github.com/medigy/uniform-resource-classification-topics-ludwig.git"
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/"
@@ -25,14 +25,14 @@
     "author": "Shahid N. Shah",
     "license": "MIT",
     "dependencies": {
-        "@shah/traverse-urls": "0.7.1",
-        "@shah/uniform-resource": "1.0.1",
+        "@shah/traverse-urls": "0.8.0",
+        "@shah/uniform-resource": "1.0.4",
         "form-data": "^3.0.0"
     },
     "bugs": {
-        "url": "https://github.com/medigy/uniform-resource-classifier-nih-mesh/issues"
+        "url": "https://github.com/medigy/uniform-resource-classification-topics-ludwig/issues"
     },
-    "homepage": "https://github.com/medigy/uniform-resource-classifier-nih-mesh",
+    "homepage": "https://github.com/medigy/uniform-resource-classification-topics-ludwig",
     "devDependencies": {
         "@types/node": "^14.0.26",
         "alsatian": "^3.2.1",
