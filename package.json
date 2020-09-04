@@ -1,6 +1,6 @@
 {
     "name": "@medigy/uniform-resource-classification-topics-ludwig",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "description": "Uniform resource topics classifier Ludwig",
     "main": "dist/uniform-resource-classifier-topics-ludwig.js",
     "types": "dist/uniform-resource-classifier-topics-ludwig.d.ts",

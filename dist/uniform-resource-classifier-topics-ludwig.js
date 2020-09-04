@@ -57,7 +57,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         }
         callTopicsAPI(ctx, resource, input) {
             return __awaiter(this, void 0, void 0, function* () {
-                const result = yield tru.call("https://ludwig.ml.infra.medigy.com/predict", input, new tru.FormDataCallOptions({ fetchTimeOut: 120000 }));
+                const result = yield tru.call("https://prod.ludwig.ml.infra.medigy.com/predict", input, new tru.FormDataCallOptions({ fetchTimeOut: 120000 }));
                 if (tru.isCallResult(result)) {
                     return Object.assign(Object.assign({}, resource), { ludwigTopicsClassification: result.callResultPOJO });
                 }
