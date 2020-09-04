@@ -36,7 +36,7 @@ export class LudwigTopicsClassifier implements ur.UniformResourceTransformer {
   }
 
   async callTopicsAPI(ctx: ur.ResourceTransformerContext, resource: ur.UniformResource, input: object): Promise<LudwigTopicsNotClassifiableResource | LudwigClassifiedResource> {
-    const result = await tru.call("https://ludwig.ml.infra.medigy.com/predict", input, new tru.FormDataCallOptions({ fetchTimeOut: 120000 }));
+    const result = await tru.call("https://prod.ludwig.ml.infra.medigy.com/predict", input, new tru.FormDataCallOptions({ fetchTimeOut: 120000 }));
     if (tru.isCallResult(result)) {
       return {
         ...resource,
@@ -75,15 +75,13 @@ export class LudwigTopicsClassifier implements ur.UniformResourceTransformer {
       const enrichedCuratable = await ur.EnrichCuratableContent.singleton.flow(ctx, resource);
       if (ur.isCuratableContentResource(enrichedCuratable)) {
         title = enrichedCuratable.curatableContent.title;
-        if(enrichedCuratable.curatableContent.description != undefined){
-          shortDescription = enrichedCuratable.curatableContent.description;
-        }
+        
       }
       
 
       var form = new FormData();
       form.append("title", title);
-      form.append("shortDescription", shortDescription);
+      form.append("shortDescription", '');
       form.append("content", content);
 
       // console.log("test", this.callTopicsAPI(ctx, resource, form))
